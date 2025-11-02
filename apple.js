@@ -2,9 +2,10 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileSearchBtn = document.getElementById('mobile-search-btn');
 
-        mobileMenuBtn.addEventListener('click', () => {
+        function toggleMobileMenu() {
             const isHidden = mobileMenu.classList.toggle('hidden');
             
+            // Toggle between hamburger and close icon
             if (!isHidden) {
                 mobileMenuBtn.innerHTML = `
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -14,18 +15,7 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 `;
             }
-        });
-
-        mobileSearchBtn.addEventListener('click', () => {
-             const isHidden = mobileMenu.classList.toggle('hidden');
-            
-            if (!isHidden) {
-                mobileMenuBtn.innerHTML = `
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                `;
-            } else {
-                mobileMenuBtn.innerHTML = `
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                `;
-            }
-        });
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileSearchBtn.addEventListener('click', toggleMobileMenu);

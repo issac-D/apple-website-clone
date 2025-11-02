@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Clone</title>
+    <title>Apple Clone - Final Refined</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Using Inter font for the typical clean Apple typography */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         html, body {
             font-family: 'Inter', sans-serif;
-            background-color: #f5f5f7;
-            color: #1d1d1f;
+            background-color: #f5f5f7; /* Apple's off-white background color */
+            color: #1d1d1f; /* Apple's standard dark text color */
         }
         .apple-nav-link {
             font-size: 12px;
@@ -20,39 +21,23 @@
         .apple-nav-link:hover {
             color: #ffffff;
         }
-        .hero-section {
-            padding: 50px 0;
-        }
-        .hero-title {
-            font-size: 40px;
-            font-weight: 700;
-        }
-        .hero-subtitle {
-            font-size: 20px;
-            font-weight: 400;
-        }
         .product-link {
             color: #0071e3;
             font-size: 17px;
             transition: opacity 0.2s;
+            display: flex;
+            align-items: center;
+            line-height: 1.2;
+            padding: 0 10px; /* Added padding to links to ensure separation */
         }
         .product-link:hover {
             opacity: 0.7;
         }
-
-        /* Responsive Hero Text Size */
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 56px;
-            }
-            .hero-subtitle {
-                font-size: 28px;
-            }
-        }
-        
     </style>
 </head>
 <body class="min-h-screen">
+
+    <!-- Navbar: Minimalist and Dark -->
     <header class="bg-gray-800 text-white sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-11 items-center justify-between">
@@ -73,15 +58,19 @@
                 </div>
                 <div class="flex items-center space-x-4">
                     <button class="apple-nav-link lg:hidden" id="mobile-search-btn">
+                        <!-- Search Icon -->
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                     </button>
                     <button class="apple-nav-link hidden lg:block">
+                        <!-- Search Icon -->
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                     </button>
                     <a href="#" class="apple-nav-link">
+                        <!-- Cart Icon -->
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M3 1a1 1 0 000 2h1a1 1 0 000-2H3zm6 0a1 1 0 100 2h3a1 1 0 100-2H9zm-2 4a1 1 0 000 2h2a1 1 0 100-2H7zm5-1a1 1 0 000 2h1a1 1 0 100-2h-1zM4 9a1 1 0 100 2h1a1 1 0 100-2H4zm6 0a1 1 0 100 2h1a1 1 0 100-2h-1zM7 9a1 1 0 100 2h2a1 1 0 100-2H7zm5 0a1 1 0 100 2h1a1 1 0 100-2h-1zM3 13a1 1 0 000 2h1a1 1 0 000-2H3zm6 0a1 1 0 100 2h3a1 1 0 100-2H9zm-2 4a1 1 0 000 2h2a1 1 0 100-2H7zm5-1a1 1 0 000 2h1a1 1 0 100-2h-1z" /><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM5 3a1 1 0 00-1 1v1a1 1 0 002 0V4a1 1 0 00-1-1zM15 3a1 1 0 00-1 1v1a1 1 0 002 0V4a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
                     </a>
                     <button id="mobile-menu-btn" class="lg:hidden apple-nav-link">
+                        <!-- Hamburger Menu Icon -->
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                 </div>
@@ -89,6 +78,7 @@
         </nav>
         
         <div id="mobile-menu" class="hidden lg:hidden absolute w-full bg-gray-900 shadow-xl py-2 transition-all duration-300">
+            <!-- Mobile Menu content -->
             <div class="px-4 py-2">
                 <input type="text" placeholder="Search apple.com" class="w-full bg-gray-700 text-white placeholder-gray-400 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
@@ -100,72 +90,87 @@
     </header>
 
     <main>
-        <!-- Hero Section 1: iPhone 15 Pro -->
-        <section class="hero-section text-center bg-black text-white" style="background-image: url('https://placehold.co/1200x550/000000/ffffff?text=iPhone+15+Pro'); background-size: cover; background-position: center;">
-            <div class="pt-24 pb-48">
-                <h1 class="hero-title text-white">iPhone 15 Pro</h1>
-                <h2 class="hero-subtitle text-gray-300 mt-2">Titanium. So strong. So light. So Pro.</h2>
-                <div class="mt-4 flex justify-center space-x-6">
+        <!-- Hero Section 1: iPhone 15 Pro (Dark background, high contrast) -->
+        <section class="min-h-[500px] md:min-h-[650px] text-center bg-black text-white overflow-hidden relative border-b border-gray-700">
+            <div class="absolute inset-0 z-10 flex flex-col items-center justify-start pt-12 md:pt-24 px-4">
+                <h1 class="text-4xl md:text-6xl font-semibold leading-none text-white mt-4">iPhone 15 Pro</h1>
+                <h2 class="text-xl md:text-3xl font-normal text-gray-300 mt-2">Titanium. So strong. So light. So Pro.</h2>
+                <div class="mt-4 flex justify-center space-x-2 md:space-x-6">
                     <a href="#" class="product-link text-blue-500 hover:text-blue-400">Learn more &gt;</a>
                     <a href="#" class="product-link text-blue-500 hover:text-blue-400">Buy &gt;</a>
                 </div>
             </div>
+            <!-- High-quality product image placeholder (black background) -->
+            <img src="https://placehold.co/1400x750/000000/ffffff?text=iPhone+15+Pro" 
+                 class="w-full h-full object-cover" 
+                 alt="iPhone 15 Pro product image">
         </section>
 
-        <!-- Hero Section 2: MacBook Air -->
-        <section class="hero-section text-center bg-white text-black mt-3">
-            <div class="pt-16 pb-32">
-                <h1 class="hero-title">MacBook Air</h1>
-                <h2 class="hero-subtitle mt-2">Power. It's in the Air.</h2>
-                <div class="mt-4 flex justify-center space-x-6">
+        <!-- Hero Section 2: MacBook Air (Light background, clean aesthetic) -->
+        <section class="min-h-[500px] text-center bg-white text-black mt-3 overflow-hidden border-b border-gray-200">
+            <div class="pt-12 md:pt-16 max-w-7xl mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-semibold leading-none">MacBook Air</h1>
+                <h2 class="text-xl md:text-3xl font-normal text-gray-700 mt-2">Power. It's in the Air.</h2>
+                <div class="mt-4 flex justify-center space-x-2 md:space-x-6">
                     <a href="#" class="product-link">Learn more &gt;</a>
                     <a href="#" class="product-link">Buy &gt;</a>
                 </div>
-                <div class="mt-8">
-                    <img src="https://placehold.co/1200x450/FFFFFF/1d1d1f?text=M3+MacBook+Air+Product+Image" onerror="this.src='https://placehold.co/1200x450/FFFFFF/1d1d1f?text=M3+MacBook+Air+Product+Image'" class="mx-auto w-11/12 md:w-3/4 max-w-4xl rounded-xl shadow-lg" alt="MacBook Air Product Image">
-                </div>
+            </div>
+            <div class="mt-8 overflow-hidden">
+                <!-- High-quality product image placeholder (white background) -->
+                <img src="https://placehold.co/1400x600/FFFFFF/1d1d1f?text=MacBook+Air" 
+                     class="mx-auto w-11/12 max-w-5xl rounded-lg shadow-xl" 
+                     alt="MacBook Air Product Image">
             </div>
         </section>
 
-        <!-- Grid Section 3: Watch and iPad -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-7xl mx-auto px-0 md:px-4 mb-3">
+        <!-- Grid Section 3: Watch and iPad (Split) -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-7xl mx-auto px-0 md:px-4 my-3">
             <!-- Apple Watch Section -->
-            <div class="hero-section text-center bg-black text-white rounded-xl lg:rounded-3xl p-10 md:p-16">
-                <h1 class="hero-title text-white text-3xl md:text-5xl">Apple Watch Series 9</h1>
-                <h2 class="hero-subtitle text-red-500 text-sm md:text-lg uppercase">Smarter. Brighter. Mightier.</h2>
-                <div class="mt-4 flex justify-center space-x-6">
-                    <a href="#" class="product-link text-blue-500 hover:text-blue-400">Learn more &gt;</a>
-                    <a href="#" class="product-link text-blue-500 hover:text-blue-400">Buy &gt;</a>
+            <div class="min-h-[500px] flex flex-col justify-end items-center text-center bg-black text-white rounded-xl lg:rounded-3xl p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute inset-x-0 top-10 z-10">
+                    <h1 class="text-3xl md:text-5xl font-semibold leading-none">Apple Watch Series 9</h1>
+                    <h2 class="text-base md:text-xl font-normal text-red-500 uppercase tracking-wider mt-1">Smarter. Brighter. Mightier.</h2>
+                    <div class="mt-4 flex justify-center space-x-2 md:space-x-6">
+                        <a href="#" class="product-link text-blue-500 hover:text-blue-400">Learn more &gt;</a>
+                        <a href="#" class="product-link text-blue-500 hover:text-blue-400">Buy &gt;</a>
+                    </div>
                 </div>
-                <div class="mt-8">
-                    <img src="https://placehold.co/550x450/000000/ffffff?text=Apple+Watch+Series+9" onerror="this.src='https://placehold.co/550x450/000000/ffffff?text=Apple+Watch+Series+9'" class="mx-auto w-11/12 max-w-md" alt="Apple Watch Product Image">
-                </div>
+                <!-- High-quality product image placeholder (black background) -->
+                <img src="https://placehold.co/700x600/000000/ffffff?text=Apple+Watch" 
+                     class="mx-auto w-4/5 max-w-md object-contain" 
+                     alt="Apple Watch Product Image">
             </div>
 
             <!-- iPad Pro Section -->
-            <div class="hero-section text-center bg-white text-black rounded-xl lg:rounded-3xl p-10 md:p-16">
-                <h1 class="hero-title text-3xl md:text-5xl">iPad Pro</h1>
-                <h2 class="hero-subtitle text-gray-600 text-sm md:text-lg mt-2">Unbelievably thin. Unbelievably powerful.</h2>
-                <div class="mt-4 flex justify-center space-x-6">
-                    <a href="#" class="product-link">Learn more &gt;</a>
-                    <a href="#" class="product-link">Buy &gt;</a>
+            <div class="min-h-[500px] flex flex-col justify-end items-center text-center bg-white text-black rounded-xl lg:rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-sm">
+                <div class="absolute inset-x-0 top-10 z-10">
+                    <h1 class="text-3xl md:text-5xl font-semibold leading-none">iPad Pro</h1>
+                    <h2 class="text-xl md:text-3xl font-normal text-gray-700 mt-2">Unbelievably thin. Unbelievably powerful.</h2>
+                    <div class="mt-4 flex justify-center space-x-2 md:space-x-6">
+                        <a href="#" class="product-link">Learn more &gt;</a>
+                        <a href="#" class="product-link">Buy &gt;</a>
+                    </div>
                 </div>
-                <div class="mt-8">
-                    <img src="https://placehold.co/550x450/FFFFFF/1d1d1f?text=iPad+Pro+Product+Image" onerror="this.src='https://placehold.co/550x450/FFFFFF/1d1d1f?text=iPad+Pro+Product+Image'" class="mx-auto w-11/12 max-w-md" alt="iPad Pro Product Image">
-                </div>
+                <!-- High-quality product image placeholder (white background) -->
+                <img src="https://placehold.co/700x600/FFFFFF/1d1d1f?text=iPad+Pro" 
+                     class="mx-auto w-11/12 max-w-md object-contain" 
+                     alt="iPad Pro Product Image">
             </div>
         </section>
     </main>
 
-    <footer class="bg-[#f5f5f7] py-8 text-gray-500 text-xs">
+    <!-- Footer: Standard links and legal text -->
+    <footer class="bg-[#f5f5f7] py-8 text-gray-500 text-xs mt-6 border-t border-gray-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <p class="mb-4">
+            <p class="mb-4 leading-relaxed">
                 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cumque quos?
                 <br>
                 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4 border-b border-gray-300 pb-6">
+                <!-- Footer Columns for Shop, Account, Business, Values, More -->
                 <div>
                     <h3 class="font-semibold text-gray-800 mb-2 text-sm">Shop and Learn</h3>
                     <ul class="space-y-1">
@@ -181,12 +186,10 @@
                     <ul class="space-y-1">
                         <li><a href="#" class="hover:underline">Apple Pay</a></li>
                         <li><a href="#" class="hover:underline">Apple Card</a></li>
-                        <li><a href="#" class="hover:underline">Wallet</a></li>
                     </ul>
                     <h3 class="font-semibold text-gray-800 mt-4 mb-2 text-sm">Account</h3>
                     <ul class="space-y-1">
                         <li><a href="#" class="hover:underline">Manage Your Apple ID</a></li>
-                        <li><a href="#" class="hover:underline">iCloud.com</a></li>
                     </ul>
                 </div>
                 <div>
@@ -195,23 +198,16 @@
                         <li><a href="#" class="hover:underline">Apple and Business</a></li>
                         <li><a href="#" class="hover:underline">Shop for Business</a></li>
                     </ul>
-                    <h3 class="font-semibold text-gray-800 mt-4 mb-2 text-sm">For Healthcare</h3>
-                    <ul class="space-y-1">
-                        <li><a href="#" class="hover:underline">Apple in Healthcare</a></li>
-                    </ul>
                 </div>
                 <div>
                     <h3 class="font-semibold text-gray-800 mb-2 text-sm">Apple Values</h3>
                     <ul class="space-y-1">
                         <li><a href="#" class="hover:underline">Accessibility</a></li>
-                        <li><a href="#" class="hover:underline">Privacy</a></li>
-                        <li><a href="#" class="hover:underline">Ethics & Compliance</a></li>
+                        <li><a href="#" class="hover:underline">Privacy</li>
                     </ul>
                     <h3 class="font-semibold text-gray-800 mt-4 mb-2 text-sm">About Apple</h3>
                     <ul class="space-y-1">
                         <li><a href="#" class="hover:underline">Newsroom</a></li>
-                        <li><a href="#" class="hover:underline">Investors</a></li>
-                        <li><a href="#" class="hover:underline">Events</a></li>
                     </ul>
                 </div>
                 <div>
@@ -220,7 +216,6 @@
                         <li><a href="#" class="hover:underline">Apple News</a></li>
                         <li><a href="#" class="hover:underline">Apple Fitness+</a></li>
                         <li><a href="#" class="hover:underline">Apple Books</a></li>
-                        <li><a href="#" class="hover:underline">Apple Podcasts</a></li>
                     </ul>
                 </div>
             </div>
@@ -240,6 +235,7 @@
 
     <script src="apple.js">
         
+
     </script>
 </body>
 </html>
